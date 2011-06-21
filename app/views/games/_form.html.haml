@@ -1,0 +1,8 @@
+= semantic_form_for [@ladder, @ladder.games.build] do |f|
+  = f.inputs do 
+    = f.input :team1, :as => :select, :collection => @ladder.teams
+    = f.input :score1
+    = f.input :team2, :as => :select, :collection => @ladder.teams
+    = f.input :score2
+  = f.buttons
+
