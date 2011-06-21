@@ -6,10 +6,9 @@
   %li= link_to "Löschen", user_path(@user),:confirm => "Wirklich löschen?" , :method => "delete"
 
 %h3 Teammigliedschaften
-= link_to "Neue Teammitgliedschaft erstellen", new_user_teammembership_path(@user)
+= link_to "Einem Team beitreten", new_user_teammembership_path(@user)
 %table
   %tr
-    %th ID
     %th Teamname
     %th Spieler
   = render @user.teams
