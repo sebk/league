@@ -7,5 +7,10 @@ class GamesController < ApplicationController
     redirect_to ladder_path(@ladder)
   end
 
+  def new
+    @ladder = Ladder.find(params[:ladder_id])
+    @game = @ladder.games.build
+  end
+
 
 end
