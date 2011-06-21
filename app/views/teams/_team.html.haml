@@ -1,5 +1,4 @@
 %tr
   %td
-    = link_to team.id, team_path(team)
-  %td= team.name
+    = link_to team.name, team_path(team)
   %td= team.users.count

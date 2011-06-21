@@ -1,9 +1,7 @@
-%h2 Detailansicht des Teams
+%h2 Detailansicht des Teams #{@team.name}
 
 %ul
-  %li Name: #{@team.name}
   %li Erstellt am: #{@team.created_at}
-
   %li= link_to "Editieren", edit_team_path(@team)
   %li= link_to "Löschen", team_path(@team),:confirm => "Wirklich löschen?" , :method => "delete"
 
