@@ -1,3 +1,3 @@
 ## Project setup
-  bundle install
-  rake db:setup
+    bundle install
+    rake db:setup
