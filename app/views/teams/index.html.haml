@@ -1,0 +1,10 @@
+%h2 Teams
+
+= link_to "Neues Team anlegen", new_team_path
+
+%table
+  %tr
+    %th ID
+    %th Name
+    %th Anzahl Spieler
+  = render @teams

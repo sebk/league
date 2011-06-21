@@ -1,0 +1,9 @@
+%h2 Spieler
+
+= link_to "Neuen Benutzer anlegen", new_user_path
+
+%table
+  %tr
+    %th ID
+    %th Name
+  = render @users

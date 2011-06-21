@@ -1,0 +1,32 @@
+%h2 Detailansicht des Teams
+
+%ul
+  %li Name: #{@team.name}
+  %li Erstellt am: #{@team.created_at}
+
+  %li= link_to "Editieren", edit_team_path(@team)
+  %li= link_to "Löschen", team_path(@team),:confirm => "Wirklich löschen?" , :method => "delete"
+
+%h3 Teammitglieder
+%table
+  %tr
+    %th ID
+    %th Name
+  = render @team.users
+
+%h3 Ligen
+%table
+  %tr
+    %th Liga
+  - @team.participations.each do |p|
+    %tr
+      %td= p.ladder.name
+
+Liga beitreten:
+= semantic_form_for @team.participations.build, :url => {:action => "create_participation"} do |f|
+  = f.inputs do
+    = f.input :ladder
+  = f.buttons
+
+
+

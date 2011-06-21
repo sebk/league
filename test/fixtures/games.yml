@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  team1_id: 1
+  team2_id: 1
+  ladder_id: 1
+  score1: 1
+  score2: 1
+
+two:
+  team1_id: 1
+  team2_id: 1
+  ladder_id: 1
+  score1: 1
+  score2: 1

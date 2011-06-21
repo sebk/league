@@ -1,0 +1,40 @@
+%h2= @ladder.name
+
+%ul
+  %li= link_to "Editieren", edit_ladder_path(@ladder)
+  %li= link_to "Löschen", ladder_path(@ladder),:confirm => "Wirklich löschen?" , :method => "delete"
+
+%h3 Spiele
+%table
+  %th Team 1 
+  %th Ergebnis
+  %th Team 2
+  - @ladder.games.each do |g|
+    %tr
+      %td= g.team1.name
+      %td #{g.score1} : #{g.score2}
+      %td= g.team2.name
+
+%h3 Spiel eintragen
+= semantic_form_for [@ladder, @ladder.games.build] do |f|
+  = f.inputs do 
+    = f.input :team1, :as => :select, :collection => @ladder.teams
+    = f.input :score1
+    = f.input :team2, :as => :select, :collection => @ladder.teams
+    = f.input :score2
+  = f.buttons
+
+%h3 Rangliste
+%table
+  %tr
+    %th Rang
+    %th elo Punkte
+    %th Team
+  - @ladder.participations.each do |p|
+    %tr
+      %td bla
+      %td= p.elo_score
+      %td= p.team.name
+  
+
+

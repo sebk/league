@@ -1,0 +1,18 @@
+%h2 Detailansicht des Benutzers
+
+%ul
+  %li Name: #{@user.name}
+  %li Erstellt am: #{@user.created_at}
+
+  %li= link_to "Editieren", edit_user_path(@user)
+  %li= link_to "Löschen", user_path(@user),:confirm => "Wirklich löschen?" , :method => "delete"
+
+%h3 Teammigliedschaften
+%table
+  %tr
+    %th ID
+    %th Teamname
+    %th Spieler
+  = render @user.teams
+
+= link_to "Neue Teammigliedschaft erstellen", new_user_teammembership_path(@user)

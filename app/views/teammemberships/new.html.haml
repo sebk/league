@@ -1,0 +1,7 @@
+%h2 Neue Teammitgliedschaft für #{@user.name}
+
+= semantic_form_for [@user, @teammembership] do |f|
+  = f.inputs do
+    = f.input :team
+  = f.buttons
+

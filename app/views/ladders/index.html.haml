@@ -1,0 +1,12 @@
+%h2 Ligen
+
+= link_to "Neue Liga anlegen", new_ladder_path
+
+%table
+  %tr
+    %th Name
+    %th Teams
+  - @ladders.each do |l|
+    %tr
+      %td= link_to l.name, ladder_path(l)
+      %td= l.participations.count
