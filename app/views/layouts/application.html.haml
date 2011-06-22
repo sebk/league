@@ -2,25 +2,33 @@
 %html
   %head
     %title League
-    = stylesheet_link_tag :all
+    = stylesheet_link_tag "print"
+    = stylesheet_link_tag "screen"
+    = stylesheet_link_tag "formtastic"
+    = stylesheet_link_tag "formtastic_changes"
+    /[if IE]
+      = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
     = javascript_include_tag :defaults
     = csrf_meta_tag
 
-  %body
-    %h1 League Administration
-
-    - if flash[:error]
-      #flash_error 
-        = flash[:error]
-    - if flash[:success]
-      #flash_success 
-        = flash[:success]
-
-    %ul
-      %li= link_to "Benutzer", users_path
-      %li= link_to "Teams", teams_path
-      %li= link_to "Ligen", ladders_path
-    %hr
-
-    = yield
+  %body.two-col
+    #container
+      #header
+        %h1 Leaguesys
+      #sidebar
+        %ul
+          %li= link_to "Benutzer", users_path
+          %li= link_to "Teams", teams_path
+          %li= link_to "Ligen", ladders_path
+      #content
+        #content_wrap
+          - if flash[:error]
+            #flash_error
+              = flash[:error]
+          - if flash[:success]
+            #flash_success 
+              = flash[:success]
+          = yield
+      #footer
+        Footer
 
