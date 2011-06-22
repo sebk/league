@@ -20,14 +20,15 @@
           %li= link_to "Benutzer", users_path
           %li= link_to "Teams", teams_path
           %li= link_to "Ligen", ladders_path
-      #content.border
-        - if flash[:error]
-          #flash_error
-            = flash[:error]
-        - if flash[:success]
-          #flash_success 
-            = flash[:success]
-        = yield
+      #content
+        #content_wrap
+          - if flash[:error]
+            #flash_error
+              = flash[:error]
+          - if flash[:success]
+            #flash_success 
+              = flash[:success]
+          = yield
       #footer
         Footer
 

@@ -1443,9 +1443,19 @@ body.two-col #container {
   *zoom: 1;
   margin-top: 10px;
   background-color: #ffffff;
-  border: 1px solid #DDD;
+  border: 1px solid #cccccc;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: #999999 2px 2px 0px;
+  -webkit-box-shadow: #999999 2px 2px 0px;
+  -o-box-shadow: #999999 2px 2px 0px;
+  box-shadow: #999999 2px 2px 0px;
 }
-/* line 50, ../../app/stylesheets/screen.scss */
+/* line 51, ../../app/stylesheets/screen.scss */
 body.two-col #header, body.two-col #footer {
   display: inline;
   float: left;
@@ -1456,15 +1466,17 @@ body.two-col #header, body.two-col #footer {
 * html body.two-col #header, * html body.two-col #footer {
   overflow-x: hidden;
 }
-/* line 53, ../../app/stylesheets/screen.scss */
+/* line 54, ../../app/stylesheets/screen.scss */
 body.two-col #header {
+  padding: 5px;
   border-bottom: 1px solid #cccccc;
 }
-/* line 56, ../../app/stylesheets/screen.scss */
+/* line 58, ../../app/stylesheets/screen.scss */
 body.two-col #footer {
   border-top: 1px solid #cccccc;
+  padding: 5px;
 }
-/* line 59, ../../app/stylesheets/screen.scss */
+/* line 62, ../../app/stylesheets/screen.scss */
 body.two-col #sidebar {
   display: inline;
   float: left;
@@ -1475,8 +1487,9 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 65, ../../app/stylesheets/screen.scss */
+/* line 68, ../../app/stylesheets/screen.scss */
 body.two-col #content {
+  padding-bottom: 0px;
   display: inline;
   float: left;
   margin-right: 0;
@@ -1486,19 +1499,25 @@ body.two-col #content {
 * html body.two-col #content {
   overflow-x: hidden;
 }
+/* line 75, ../../app/stylesheets/screen.scss */
+body.two-col #content #content_wrap {
+  min-height: 400px;
+  border-left: 1px solid #cccccc;
+  padding: 10px;
+}
 
-/* line 74, ../../app/stylesheets/screen.scss */
+/* line 83, ../../app/stylesheets/screen.scss */
 table {
   border: 1px solid #cccccc;
   border-collapse: collapse;
   width: 100%;
 }
-/* line 78, ../../app/stylesheets/screen.scss */
+/* line 87, ../../app/stylesheets/screen.scss */
 table td, table th {
   border: 1px solid #cccccc;
 }
 
-/* line 83, ../../app/stylesheets/screen.scss */
+/* line 92, ../../app/stylesheets/screen.scss */
 #flash_error {
   padding: 0.8em;
   margin-bottom: 1em;
@@ -1513,7 +1532,7 @@ table td, table th {
   color: #8a1f11;
 }
 
-/* line 87, ../../app/stylesheets/screen.scss */
+/* line 96, ../../app/stylesheets/screen.scss */
 #flash_success {
   padding: 0.8em;
   margin-bottom: 1em;
@@ -1528,18 +1547,18 @@ table td, table th {
   color: #264409;
 }
 
-/* line 94, ../../app/stylesheets/screen.scss */
+/* line 103, ../../app/stylesheets/screen.scss */
 h1, h2, h3, h4 {
   line-hight: 1.1em;
   font-weight: bold;
   color: #333333;
   text-shadow: #cccccc 1px 1px 0;
 }
-/* line 99, ../../app/stylesheets/screen.scss */
+/* line 108, ../../app/stylesheets/screen.scss */
 h1 h2, h2 h2, h3 h2, h4 h2 {
   font-size: 36px;
 }
-/* line 102, ../../app/stylesheets/screen.scss */
+/* line 111, ../../app/stylesheets/screen.scss */
 h1 h1, h2 h1, h3 h1, h4 h1 {
   font-size: 40px;
 }
