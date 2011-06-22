@@ -1,0 +1,15 @@
+%h2 Hallo #{current_user.name}
+
+%h3 Deine Teams:
+%ul
+  - current_user.teams.each do |t|
+    %li= link_to t.name, team_path(t)
+
+%h3 Einem Team beitreten
+= semantic_form_for current_user.teammemberships.build, :url => { :controller => "home", :action => "join_team"} do |f|
+  = f.inputs do
+    = f.input :team
+  = f.buttons
+
+
+= link_to "Neues Team erstellen", new_team_path

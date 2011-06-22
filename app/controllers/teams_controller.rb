@@ -1,12 +1,14 @@
 class TeamsController < ApplicationController
+
+  before_filter :authenticate_user!
   
   def create_participation
     @team = Team.find(params[:id])
     @participation = @team.participations.build(params[:participation])
     if @participation.save
-      flash[:success] = "Das Team ist jetzt Mitglied"
+      flash[:success] = "Das Team ist jetzt in der Liga."
     else
-      flash[:error] = "Das Team ist jetzt ohne Glied"
+      flash[:error] = "Das Tesm konnte nicht in die Liga eingetragen werden."
     end
     redirect_to team_path(@team)
   end
@@ -31,7 +33,9 @@ class TeamsController < ApplicationController
   def create
     @team = Team.new(params[:team])
     if @team.save
-      redirect_to teams_path
+      @membership = current_user.teammemberships.build(:team => @team)
+      @membership.save
+      redirect_to team_path(@team)
     else
       render :new
     end

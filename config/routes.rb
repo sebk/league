@@ -1,5 +1,12 @@
 GobasLadder::Application.routes.draw do
 
+  devise_for :users
+
+  get 'me' => 'home#me', :as => "show_me"
+  get "me/edit" => "home#editme", :as => "edit_me"
+  put "me" => "home#updateme", :as => "update_me"
+  post "me/join_team" => "home#join_team"
+
   resources :users do
     resources :teammemberships
   end
@@ -63,7 +70,7 @@ GobasLadder::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "users#index"
+  root :to => "home#me"
 
   # See how all your routes lay out with "rake routes"
 

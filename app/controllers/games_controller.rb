@@ -1,5 +1,7 @@
 class GamesController < ApplicationController
 
+  before_filter :authenticate_user!
+
   def create
     @ladder = Ladder.find(params[:ladder_id])
     @game = @ladder.games.build(params[:game])

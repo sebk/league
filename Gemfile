@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'formtastic'
 gem 'haml'
 gem 'compass'
+gem 'devise'
 
 # Use unicorn as the web server
 # gem 'unicorn'

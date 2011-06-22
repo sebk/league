@@ -14,12 +14,22 @@
   %body.two-col
     #container
       #header
-        %h1 Leaguesys
+        #header_wrap
+          .left
+            %h1 Leaguesys
+          .right.alignright
+            - if user_signed_in?
+              Angemeldet als:
+              %br
+              = current_user.name
+              %br
+              = link_to 'Mein Profil', show_me_path
+              |
+              = link_to "Logout", destroy_user_session_path
       #sidebar
-        %ul
-          %li= link_to "Benutzer", users_path
-          %li= link_to "Teams", teams_path
-          %li= link_to "Ligen", ladders_path
+        #sidebar_wrap
+          %ul
+            %li= link_to "Ligen", ladders_path
       #content
         #content_wrap
           - if flash[:error]
@@ -30,5 +40,5 @@
               = flash[:success]
           = yield
       #footer
-        Footer
+        Leaguesys
 

@@ -52,17 +52,24 @@ body.two-col {
     @include column($blueprint-grid-columns); 
   }
   #header {
-    padding: 5px;
     border-bottom: 1px solid $border-color;
+    height: 100px;
+    #header_wrap {
+      padding: 5px;
+    }
   }
   #footer {
     border-top: 1px solid $border-color;
     padding: 5px;
+    text-align:center;
   }
   #sidebar {
     // One third of the grid columns, rounding down. With 24 cols, this is 8.
     $sidebar-columns: 4;
     @include column($sidebar-columns); 
+    #sidebar_wrap {
+      padding: 5px;
+    }
   }
     
   #content {
@@ -103,7 +110,7 @@ table {
 h1,h2,h3,h4 {
   line-hight: 1.1em;
   font-weight: bold;
-  color: #333333;
+  color: #666666;
   @include text-shadow(#cccccc 1px 1px 0); 
   h2 {
     font-size: 36px;
@@ -113,9 +120,17 @@ h1,h2,h3,h4 {
   }
 }
 
+.left {
+  float: left;
+}
 
+.right {
+ float: right;
+}
 
-
+.alignright {
+  text-align: right;
+}
 
 
 

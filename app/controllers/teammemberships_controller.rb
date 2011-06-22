@@ -1,5 +1,7 @@
 class TeammembershipsController < ApplicationController
 
+  before_filter :authenticate_user!
+
 def new
   @user = User.find(params[:user_id])
   @teammembership = @user.teammemberships.build

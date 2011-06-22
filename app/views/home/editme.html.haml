@@ -1,0 +1,8 @@
+%h2 Eigene Daten editieren
+
+= semantic_form_for current_user, { :url => {:controller => "home", :action => "updateme"}}  do |f|
+  = f.inputs do 
+    = f.input :name
+    = f.input :email
+  = f.buttons
+
