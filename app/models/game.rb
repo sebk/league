@@ -20,11 +20,9 @@ class Game < ActiveRecord::Base
     expected = 1 / (1 + (10**((p2.elo_score - p1.elo_score).to_f / c2.to_f).to_f).to_f)
     added1 = (c1 * (percent_wins1 - expected)).round
     added2 = added1 * (-1)
-debugger
     p1.elo_score = p1.elo_score + added1
     p1.save
     p2.elo_score = p2.elo_score + added2
     p2.save
-debugger
   end
 end
