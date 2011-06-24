@@ -11,6 +11,7 @@ GobasLadder::Application.routes.draw do
     resources :teammemberships
   end
     
+  
   resources :teams do
     member do
       post 'create_participation'

@@ -6,7 +6,7 @@ class Game < ActiveRecord::Base
   validates_presence_of :team1, :team2, :score1, :score2, :ladder
   
 
-  after_save :calculate_elo_score
+  after_save :calculate_elo_score, :calculate_rank
 
   def calculate_elo_score
     c1 = 50
@@ -25,4 +25,10 @@ class Game < ActiveRecord::Base
     p2.elo_score = p2.elo_score + added2
     p2.save
   end
+
+
+  def calculate_rank
+    self.ladder.calulate_rank
+  end
+
 end

@@ -8,7 +8,7 @@
 %h3 Einem Team beitreten
 = semantic_form_for current_user.teammemberships.build, :url => { :controller => "home", :action => "join_team"} do |f|
   = f.inputs do
-    = f.input :team
+    = f.input :team, :as => :select, :collection => Multiplayerteam.all
   = f.buttons
 
 

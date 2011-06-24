@@ -1,5 +1,10 @@
 %h2 Detailansicht des Teams #{@team.name}
 
+- if @team.is_a?(Singleplayerteam) 
+  Singleplayerteam
+- else
+  Multiplayerteam
+
 %ul
   %li Erstellt am: #{@team.created_at}
   %li= link_to "Editieren", edit_team_path(@team)
