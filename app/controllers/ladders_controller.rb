@@ -44,7 +44,7 @@ class LaddersController < ApplicationController
 
   def destroy
     @ladder = Ladder.find(params[:id])
-    if @ladder.delete
+    if @ladder.destroy
       flash[:success] = "Ladder wurde gelöscht"
     else
       flash[:error] = "Ladder konnte nicht gelöscht werden"
