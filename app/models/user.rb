@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :teammemberships
   
   has_many :teams, :through => :teammemberships
+  has_one :singleplayerteam, :through => :teammemberships, :conditions => {"singleplayer" => true }, :source => :team
+
 
   #has_one :team, :through => :teammemberships, :conditions => "type = Singleplayerteam", :as => :singleplayerteam
   
@@ -19,8 +21,8 @@ class User < ActiveRecord::Base
 
 
   def create_singleplayerteam    
-    self.teams.build(Singleplayerteam.create(:name => self.name))
-    self.save
+    t = self.teams.create(:name => self.name, :singleplayer => true)
+    t.save
   end
 
 end
