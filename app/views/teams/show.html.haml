@@ -1,9 +1,5 @@
 %h2 Detailansicht des Teams #{@team.name}
 
-- if @team.is_a?(Singleplayerteam) 
-  Singleplayerteam
-- else
-  Multiplayerteam
 
 %ul
   %li Erstellt am: #{@team.created_at}
