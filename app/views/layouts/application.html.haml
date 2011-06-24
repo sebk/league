@@ -22,13 +22,11 @@
               Angemeldet als:
               %br
               = current_user.name
-              %br
-              = link_to 'Mein Profil', show_me_path
-              |
-              = link_to "Logout", destroy_user_session_path
+              = link_to "(logout)", destroy_user_session_path
       #menu
         #menu_wrap
           %ul
+            %li= link_to "Mein Profil", show_me_path
             %li= link_to "Ligen", ladders_path
       #content
         #content_wrap

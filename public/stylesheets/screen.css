@@ -1456,47 +1456,46 @@ body.two-col #container {
   box-shadow: #999999 2px 2px 0px;
 }
 /* line 51, ../../app/stylesheets/screen.scss */
-body.two-col #header, body.two-col #footer {
+body.two-col #header, body.two-col #footer, body.two-col #menu {
   display: inline;
   float: left;
   margin-right: 10px;
   width: 950px;
 }
 /* line 147, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html body.two-col #header, * html body.two-col #footer {
+* html body.two-col #header, * html body.two-col #footer, * html body.two-col #menu {
   overflow-x: hidden;
 }
 /* line 54, ../../app/stylesheets/screen.scss */
-body.two-col #header {
+body.two-col #menu {
+  border-top: 1px solid #cccccc;
   border-bottom: 1px solid #cccccc;
-  height: 100px;
 }
 /* line 57, ../../app/stylesheets/screen.scss */
+body.two-col #menu ul {
+  margin: 0px;
+}
+/* line 59, ../../app/stylesheets/screen.scss */
+body.two-col #menu ul li {
+  display: inline;
+  margin-left: 10px;
+}
+/* line 66, ../../app/stylesheets/screen.scss */
 body.two-col #header #header_wrap {
+  height: 50px;
   padding: 5px;
 }
-/* line 61, ../../app/stylesheets/screen.scss */
+/* line 69, ../../app/stylesheets/screen.scss */
+body.two-col #header #header_wrap h1 {
+  margin-bottom: 2px;
+}
+/* line 74, ../../app/stylesheets/screen.scss */
 body.two-col #footer {
   border-top: 1px solid #cccccc;
   padding: 5px;
   text-align: center;
 }
-/* line 66, ../../app/stylesheets/screen.scss */
-body.two-col #sidebar {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 150px;
-}
-/* line 147, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html body.two-col #sidebar {
-  overflow-x: hidden;
-}
-/* line 70, ../../app/stylesheets/screen.scss */
-body.two-col #sidebar #sidebar_wrap {
-  padding: 5px;
-}
-/* line 75, ../../app/stylesheets/screen.scss */
+/* line 80, ../../app/stylesheets/screen.scss */
 body.two-col #content {
   padding-bottom: 0px;
   display: inline;
@@ -1508,25 +1507,24 @@ body.two-col #content {
 * html body.two-col #content {
   overflow-x: hidden;
 }
-/* line 82, ../../app/stylesheets/screen.scss */
+/* line 87, ../../app/stylesheets/screen.scss */
 body.two-col #content #content_wrap {
   min-height: 400px;
-  border-left: 1px solid #cccccc;
   padding: 10px;
 }
 
-/* line 90, ../../app/stylesheets/screen.scss */
+/* line 95, ../../app/stylesheets/screen.scss */
 table {
   border: 1px solid #cccccc;
   border-collapse: collapse;
   width: 100%;
 }
-/* line 94, ../../app/stylesheets/screen.scss */
+/* line 99, ../../app/stylesheets/screen.scss */
 table td, table th {
   border: 1px solid #cccccc;
 }
 
-/* line 99, ../../app/stylesheets/screen.scss */
+/* line 104, ../../app/stylesheets/screen.scss */
 #flash_error {
   padding: 0.8em;
   margin-bottom: 1em;
@@ -1541,7 +1539,7 @@ table td, table th {
   color: #8a1f11;
 }
 
-/* line 103, ../../app/stylesheets/screen.scss */
+/* line 108, ../../app/stylesheets/screen.scss */
 #flash_success {
   padding: 0.8em;
   margin-bottom: 1em;
@@ -1556,33 +1554,33 @@ table td, table th {
   color: #264409;
 }
 
-/* line 110, ../../app/stylesheets/screen.scss */
+/* line 115, ../../app/stylesheets/screen.scss */
 h1, h2, h3, h4 {
   line-hight: 1.1em;
   font-weight: bold;
   color: #666666;
   text-shadow: #cccccc 1px 1px 0;
 }
-/* line 115, ../../app/stylesheets/screen.scss */
+/* line 120, ../../app/stylesheets/screen.scss */
 h1 h2, h2 h2, h3 h2, h4 h2 {
   font-size: 36px;
 }
-/* line 118, ../../app/stylesheets/screen.scss */
+/* line 123, ../../app/stylesheets/screen.scss */
 h1 h1, h2 h1, h3 h1, h4 h1 {
   font-size: 40px;
 }
 
-/* line 123, ../../app/stylesheets/screen.scss */
+/* line 128, ../../app/stylesheets/screen.scss */
 .left {
   float: left;
 }
 
-/* line 127, ../../app/stylesheets/screen.scss */
+/* line 132, ../../app/stylesheets/screen.scss */
 .right {
   float: right;
 }
 
-/* line 131, ../../app/stylesheets/screen.scss */
+/* line 136, ../../app/stylesheets/screen.scss */
 .alignright {
   text-align: right;
 }

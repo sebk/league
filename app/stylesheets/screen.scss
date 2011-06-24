@@ -48,28 +48,33 @@ body.two-col {
     @include border-radius(10px);
     @include box-shadow(#999999 2px 2px 0px);
   }
-  #header, #footer {
+  #header, #footer, #menu {
     @include column($blueprint-grid-columns); 
   }
-  #header {
+  #menu {
+    border-top: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
-    height: 100px;
+    ul {
+      margin: 0px;
+      li {
+        display: inline;
+        margin-left: 10px;
+      }
+    }
+  }
+  #header {
     #header_wrap {
+      height: 50px;
       padding: 5px;
+      h1 { 
+        margin-bottom: 2px;
+      }
     }
   }
   #footer {
     border-top: 1px solid $border-color;
     padding: 5px;
     text-align:center;
-  }
-  #sidebar {
-    // One third of the grid columns, rounding down. With 24 cols, this is 8.
-    $sidebar-columns: 4;
-    @include column($sidebar-columns); 
-    #sidebar_wrap {
-      padding: 5px;
-    }
   }
     
   #content {
@@ -81,7 +86,7 @@ body.two-col {
     @include column($content-columns, true); 
     #content_wrap {
       min-height: 400px;
-      border-left: 1px solid $border-color;
+//      border-left: 1px solid $border-color;
       padding: 10px;
     }
   } 
