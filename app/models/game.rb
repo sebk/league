@@ -28,7 +28,7 @@ class Game < ActiveRecord::Base
 
 
   def calculate_rank
-    self.ladder.calculate_rank
+    self.ladder.calculate_ranks
   end
 
 end

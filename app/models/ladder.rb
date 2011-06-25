@@ -5,9 +5,9 @@ class Ladder < ActiveRecord::Base
 
   validates_presence_of :name
 
-  def calculate_rank
-    self.particicaptions.each.with_index do |p,i|
-      p.update_attribue(rank, i+1)
+  def calculate_ranks
+    self.participations.each.with_index do |p,i|
+      p.update_attribute(:rank, i+1)
     end
   end
 end

@@ -11,9 +11,9 @@
     %th Rang
     %th Team
     %th ELO Punkte
-  - @ladder.participations.each.with_index do |p,i|
+  - @ladder.participations.each do |p|
     %tr
-      %td= i + 1
+      %td= p.rank
       %td= p.team.name
       %td= p.elo_score
  

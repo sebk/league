@@ -1,15 +1,19 @@
 %h2 Hallo #{current_user.name}
 
-%h3 Deine Teams:
-%ul
+
+%h3 Deine Platzierungen:
+%table
+  %tr
+    %th Liga
+    %th Rang
+    %th Dein Team
   - current_user.teams.each do |t|
-    %li= link_to t.name, team_path(t)
+    - t.participations.each do |p|
+      %tr
+        %td= p.ladder.name
+        %td= p.rank
+        %td= p.team.name
 
-%h3 Einem Team beitreten
-= semantic_form_for current_user.teammemberships.build, :url => { :controller => "home", :action => "join_team"} do |f|
-  = f.inputs do
-    = f.input :team, :as => :select, :collection => Team.where(:singleplayer => false)
-  = f.buttons
-
-
-= link_to "Neues Team erstellen", new_team_path
+= link_to "Trete einem Team bei"
+oder 
+= link_to "erstelle ein neues Team", new_team_path

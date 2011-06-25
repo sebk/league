@@ -7,8 +7,15 @@ class Participation < ActiveRecord::Base
   default_scope :order => "elo_score DESC"
   
   before_create :set_defaults
+  after_create :calculate_rank
+
   def set_defaults
     self.elo_score = 1000
   end
+
+  def calculate_rank 
+    self.ladder.calculate_ranks
+  end
+
 
 end
