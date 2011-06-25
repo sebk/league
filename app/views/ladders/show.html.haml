@@ -14,7 +14,7 @@
   - @ladder.participations.each do |p|
     %tr
       %td= p.rank
-      %td= p.team.name
+      %td= link_to p.team.name, team_path(p.team)
       %td= p.elo_score
  
 
