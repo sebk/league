@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110624224941) do
+ActiveRecord::Schema.define(:version => 20110626170733) do
 
   create_table "games", :force => true do |t|
     t.integer  "team1_id"
@@ -66,8 +66,10 @@ ActiveRecord::Schema.define(:version => 20110624224941) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "authentication_token"
   end
 
+  add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable
+
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name
 
@@ -15,6 +16,8 @@ class User < ActiveRecord::Base
   #belongs_to :singleplayerteam
 
   after_create :create_singleplayerteam
+
+  before_save :ensure_authentication_token
 
   validates_presence_of :name
   validates_length_of :name, :in => 3..15
