@@ -4,6 +4,11 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    
+    respond_to do |format|
+      format.html
+      format.json {render :json => @users}
+    end
   end
 
   def edit
@@ -23,14 +28,20 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    if @user.save
-      flash[:success] = "User wurde erfolgreich angelegt"
-      redirect_to users_path
-    else
-      flash[:error] = "User konnte nicht angelegt werden"
-      render :new
+
+    respond_to do |format|
+      if @user.save
+        format.html {
+          flash[:success] = "User wurde erfolgreich angelegt"
+          redirect_to users_path } 
+        format.json { render :json => {:ok => true} }
+      else
+        format.html {
+          flash[:error] = "User konnte nicht angelegt werden"
+          render :new }
+        format.json { render :json => {:error => true, :reason => @user.errors}, :status => 405 }
+      end 
     end
-      
   end
 
   def new
