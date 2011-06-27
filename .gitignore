@@ -19,3 +19,4 @@ db/*.sqlite3
 *.sw?
 db/development.sqlite3
 tmp/**/*
+public/stylesheets/screen.css
