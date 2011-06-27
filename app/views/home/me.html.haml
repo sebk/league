@@ -29,7 +29,7 @@
               %td= p.rank
               %td= p.elo_score
        
-= link_to "Einem Team beitreten"
+= link_to "Einem Team beitreten", new_user_teammembership_path(current_user)
 |
 = link_to "Ein neues Team gründen", new_team_path
 |
