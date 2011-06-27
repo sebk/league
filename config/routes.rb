@@ -1,6 +1,6 @@
 GobasLadder::Application.routes.draw do
 
-  devise_for :users, :controllers => { :sessions => "users/sessions" }
+  devise_for :users
 
   get 'me' => 'home#me', :as => "show_me"
   get "me/edit" => "home#editme", :as => "edit_me"
