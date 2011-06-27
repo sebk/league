@@ -2,8 +2,11 @@ class LaddersController < ApplicationController
 
   before_filter :authenticate_user!
 
+  respond_to :html, :json
+
   def index
     @ladders = Ladder.all
+    respond_with(@ladders)
   end
 
   def edit
@@ -40,6 +43,7 @@ class LaddersController < ApplicationController
 
   def show
     @ladder = Ladder.find(params[:id])
+    respond_with(@ladder)
   end
 
   def destroy
