@@ -60,4 +60,9 @@ class TeamsController < ApplicationController
     redirect_to teams_path
   end
 
+  def users
+    @team = Team.find(params[:id])
+    @users = @team.users.all
+    respond_with(@users)
+  end
 end
