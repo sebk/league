@@ -2,6 +2,8 @@ class TeamsController < ApplicationController
 
   before_filter :authenticate_user!
   
+  respond_to :html, :json
+
   def create_participation
     @team = Team.find(params[:id])
     @participation = @team.participations.build(params[:participation])
@@ -15,6 +17,7 @@ class TeamsController < ApplicationController
   
   def index
     @teams = Team.all
+    respond_with(@teams)
   end
 
   def edit
@@ -48,6 +51,7 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
+    respond_with(@team)
   end
 
   def destroy
