@@ -1,11 +1,10 @@
 class HomeController < ApplicationController
   before_filter :authenticate_user!
 
+  respond_to :html, :json
+
   def me
-    respond_to do |format|
-      format.html
-      format.json {render :json => current_user.teams.all}
-    end
+    respond_with(current_user)
   end
 
   def editme
