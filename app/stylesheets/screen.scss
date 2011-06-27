@@ -77,21 +77,22 @@ body.two-col {
   }
     
   #content {
-    // Two thirds of the grid columns, rounding up.
-    // With 24 cols, this is 16.
     $content-columns: 24;
-    // true means it's the last column in the row
     padding-bottom:0px;
     @include column($content-columns, true); 
     #content_wrap {
       min-height: 400px;
-//      border-left: 1px solid $border-color;
       padding: 10px;
+      h2 {
+        margin-bottom: 5px;
+      }
+      h3 {
+        margin-top: 20px;
+      }
     }
   } 
 
 h1,h2,h3,h4 {
-  line-hight: 1.1em;
   font-weight: bold;
   color: #666666;
   @include text-shadow(#cccccc 1px 1px 0); 

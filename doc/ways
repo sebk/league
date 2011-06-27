@@ -1,0 +1,23 @@
+
+Startseite:
+- Übersicht meiner Rankings mit Teams in Ladders
+- Falls spiele zu bestätigen sind, sollen diese hier angezeigt werden. Das Spiel ist ein Link zur detailseite: ladders/:ladder_id/games/:game_id dort kann dann ein update gemacht werden, sofern man selbst dazu berechtigt ist (also die confirmation von einem Team erwartet wird, zu dem man gehört)
+- Fals ich in noch keinem Multiplayerteam bin: dann link zum Erstellen anbieten
+- Falls noch nicht in einer ladder bin, dann soll ich darauf hingewiesen werden: link zum Beitreten einer Ladder 
+
+  Liste:
+  Teamname (link zur Teamseite), Laddername (Link zu Ladderseite), Rang
+
+
+Ligen:
+- Übersicht aller bestehenden Ligen
+    => Liste: Name (Link zur Ligen-Detailseite), Anzahl Teams
+Lassen wie sie ist. 
+
+Ladder hat nested games wie gehabt
+Spiele werden eingetragen - und beim create wird confirmed auf false gesetzt. 
+Beim Spielerstellen wird als Auwahlmöglichkeit für Team1 immer die Teams angezeigt, in denen man ist und die an der ausgewählen Liga teilnehmen
+
+
+
+

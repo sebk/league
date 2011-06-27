@@ -6,7 +6,7 @@
   %br
   
 - else
-  - if current_user.teams.map(&:participations).count > 0
+  - if current_user.participations.count > 0
     %h3 Deine Rankings:
     %table
       %tr

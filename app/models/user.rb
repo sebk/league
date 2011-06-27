@@ -28,4 +28,10 @@ class User < ActiveRecord::Base
     t.save
   end
 
+  def participations
+    self.teams.all.collect{|t| t.participations }.flatten
+  end
+
+
+
 end
