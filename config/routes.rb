@@ -3,6 +3,16 @@ GobasLadder::Application.routes.draw do
   devise_for :users
 
   get 'me' => 'home#me', :as => "show_me"
+
+  get 'my/home' => 'my#overview', :as => "my_overview"
+  get 'my/participations' => 'my#participations', :as => "my_participations"
+  get 'my/teams' => 'my#teams', :as => "my_teammemberships"
+  get 'my/games_to_be_confirmed' => 'my#games_to_be_confirmed', :as => "my_games_to_be_confirmed"
+
+  
+
+
+
   get "me/edit" => "home#editme", :as => "edit_me"
   put "me" => "home#updateme", :as => "update_me"
   post "me/join_team" => "home#join_team"
