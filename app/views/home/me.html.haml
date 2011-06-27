@@ -1,19 +1,31 @@
 %h2 Hallo #{current_user.name}
 
 
-%h3 Deine Platzierungen:
-%table
-  %tr
-    %th Liga
-    %th Rang
-    %th Dein Team
-  - current_user.teams.each do |t|
-    - t.participations.each do |p|
+- if current_user.teams.count <= 1  
+  Du bist noch in keinem Team.
+  %br
+  
+- else
+  - if current_user.teams.map(&:participations).count > 0
+    %h3 Deine Rankings:
+    %table
       %tr
-        %td= p.ladder.name
-        %td= p.rank
-        %td= p.team.name
+        %th Liga
+        %th Dein Team
+        %th Rang
+        %th Punkte
+      - current_user.teams.each do |t|
+        - t.participations.each do |p|
+          %tr
+            %td= link_to p.ladder.name, ladder_path(p.ladder)
+            %td= link_to p.team.name, team_path(p.team)
+            %td= p.rank
+            %td= p.elo_score
+       
+= link_to "Einem Team beitreten"
+|
+= link_to "Ein neues Team gründen", new_team_path
+|
+= link_to "Einer Liga beitreten"
 
-= link_to "Trete einem Team bei"
-oder 
-= link_to "erstelle ein neues Team", new_team_path
+

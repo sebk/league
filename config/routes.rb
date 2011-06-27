@@ -4,23 +4,19 @@ GobasLadder::Application.routes.draw do
 
   get 'me' => 'home#me', :as => "show_me"
 
-  get 'my/home' => 'my#overview', :as => "my_overview"
-  get 'my/participations' => 'my#participations', :as => "my_participations"
-  get 'my/teams' => 'my#my_teams', :as => "my_teams"
-  get 'my/games_to_be_confirmed' => 'my#games_to_be_confirmed', :as => "my_games_to_be_confirmed"
+#  get 'my/home' => 'my#overview', :as => "my_overview"
+#  get 'my/participations' => 'my#participations', :as => "my_participations"
+#  get 'my/teams' => 'my#my_teams', :as => "my_teams"
+#  get 'my/games_to_be_confirmed' => 'my#games_to_be_confirmed', :as => "my_games_to_be_confirmed"
 
-  
+#  get "me/edit" => "home#editme", :as => "edit_me"
+#  put "me" => "home#updateme", :as => "update_me"
+#  post "me/join_team" => "home#join_team"
 
-
-
-  get "me/edit" => "home#editme", :as => "edit_me"
-  put "me" => "home#updateme", :as => "update_me"
-  post "me/join_team" => "home#join_team"
 
   resources :users do
     resources :teammemberships
   end
-    
   
   resources :teams do
     member do
