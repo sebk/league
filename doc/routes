@@ -1,0 +1,21 @@
+
+
+GET /my/home                     Startseite mit Übersicht
+GET /my/participations           Laddermitgliedschaften der eigenen TEams (mit Ranking)
+GET /my/teammemberships          Listet die Teammemberships auf
+GET /my/games_to_be_confirmed    Listet alle Spiele auf, die noch zu bestätigen sind
+
+
+GET /teams
+GET /teams/:team_id
+GET /teams/:team_id/users
+
+GET /ladders/:ladder_id/         Details der Ladder
+GET /ladders/:ladder_id/teams    Listet Teams als RAngliste
+GET /ladders/:ladder_id/games    Listet alle Games in der Ladder
+POST /ladders/:ladder_id/games   Trägt ein Spiel ein
+PUT /ladders/:ladder_id/games/:game_id   Updated ein Spiel (bestätigung vom Gegner) 
+GET /ladders/:ladder_id/games/:game_id   Zeigt spieldetails an
+
+
+
