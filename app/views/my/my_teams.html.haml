@@ -1,0 +1,11 @@
+%h2 Meine Teams
+
+%table
+  %tr
+    %th Teamname
+    %th Spieler
+  - @teams.each do  |team|
+    %tr
+      %td= team.name
+      %td= team.users.count
+

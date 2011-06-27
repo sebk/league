@@ -6,7 +6,7 @@ GobasLadder::Application.routes.draw do
 
   get 'my/home' => 'my#overview', :as => "my_overview"
   get 'my/participations' => 'my#participations', :as => "my_participations"
-  get 'my/teams' => 'my#teams', :as => "my_teammemberships"
+  get 'my/teams' => 'my#my_teams', :as => "my_teams"
   get 'my/games_to_be_confirmed' => 'my#games_to_be_confirmed', :as => "my_games_to_be_confirmed"
 
   
