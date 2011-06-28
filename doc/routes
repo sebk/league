@@ -6,8 +6,8 @@ GET /my/teammemberships          Listet die Teammemberships auf
 GET /my/games_to_be_confirmed    Listet alle Spiele auf, die noch zu bestätigen sind
 
 
-GET /teams
-GET /teams/:team_id
+GET /teams                       Eigene Teams
+GET /teams/:team_id               
 GET /teams/:team_id/users
 
 GET /ladders/:ladder_id/         Details der Ladder

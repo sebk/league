@@ -19,11 +19,13 @@
     %tr
       %td= p.ladder.name
 
-Liga beitreten:
-= semantic_form_for @team.participations.build, :url => {:action => "create_participation"} do |f|
-  = f.inputs do
-    = f.input :ladder
-  = f.buttons
+
+- if current_user.teams.include?(@team)
+  Liga beitreten:
+  = semantic_form_for @team.participations.build, :url => {:action => "create_participation"} do |f|
+    = f.inputs do
+      = f.input :ladder
+    = f.buttons
 
 
 

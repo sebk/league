@@ -62,7 +62,7 @@ class TeamsController < ApplicationController
 
   def users
     @team = Team.find(params[:id])
-    @users = @team.users.all
+    @users = @team.users
     respond_with(@users)
   end
 end

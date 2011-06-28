@@ -10,18 +10,28 @@ class LaddersController < ApplicationController
   end
 
   def edit
-    @ladder = Ladder.find(params[:id])
+    if current_user.is_admin?
+      @ladder = Ladder.find(params[:id])
+    else
+      #render :partial => "error", :status => :forbidden
+      Application.render_forbidden()
+    end
   end
 
 
   def update
-    @ladder = Ladder.find(params[:id])
-    if @ladder.update_attributes(params[:ladder])
-      flash[:success] = "Änderungen wurden gespeichert"
-      redirect_to ladder_path(@ladder)
+    if current_user.is_admin?
+      @ladder = Ladder.find(params[:id])
+      if @ladder.update_attributes(params[:ladder])
+        flash[:success] = "Änderungen wurden gespeichert"
+        redirect_to ladder_path(@ladder)
+      else
+        flash[:error] = "Änderungen konnten nicht gespeichert werden"
+        render :edit
+      end
+    
     else
-      flash[:error] = "Änderungen konnten nicht gespeichert werden"
-      render :edit
+      render :status => :forbidden
     end
   end
 

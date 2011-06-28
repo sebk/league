@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable
 
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :admin
 
   has_many :teammemberships
   
@@ -29,8 +29,11 @@ class User < ActiveRecord::Base
   end
 
   def participations
-    self.teams.all.collect{|t| t.participations }.flatten
+    self.teams.collect{|t| t.participations }.flatten
   end
 
+  def is_admin?
+    self.admin
+  end
 
 end

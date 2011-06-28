@@ -7,7 +7,7 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 u1 = User.create(:name => "Roman", :email => "rl@gobas.de", :password => "asdasd", :password_confirmation => "asdasd")
-u2 = User.create(:name => "Sebastian", :email => "sek@gobas.de", :password => "asdasd", :password_confirmation => "asdasd")
+u2 = User.create!(:name => "Sebastian", :email => "sek@gobas.de", :password => "asdasd", :password_confirmation => "asdasd", :admin => true)
 
 #t3 = Multiplayerteam.create(:name => "Seb und Roman 2un2 Kicker")
 #t3.teammemberships.create(:user => u1)

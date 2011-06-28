@@ -1,8 +1,9 @@
 %h2= @ladder.name
 %p 
   Ladder 
-  = link_to "editieren", edit_ladder_path(@ladder)
-  = link_to "löschen", ladder_path(@ladder),:confirm => "Wirklich löschen?" , :method => "delete"
+  - if current_user.is_admin?
+    = link_to "editieren", edit_ladder_path(@ladder)
+    = link_to "löschen", ladder_path(@ladder),:confirm => "Wirklich löschen?" , :method => "delete"
   = link_to "neues Spiel eintragen", new_ladder_game_path(@ladder)
 
 %h3 Rangliste
