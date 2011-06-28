@@ -11,4 +11,11 @@ class Team < ActiveRecord::Base
     p.save
   end
 
+  scope :without_user, proc{ |user| { :conditions => ['id not in (?)', user.team_ids]  }}
+
+  scope :singleplayer, where(:singleplayer => true)
+
+  scope :multiplayer, where(:singleplayer => false)
+
+
 end

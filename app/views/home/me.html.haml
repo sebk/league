@@ -15,20 +15,13 @@
         %th Rang
         %th Punkte
       - current_user.teams.each do |t|
-        - if t.participations.count == 0 && t.singleplayer == false
+        - t.participations.each do |p|
           %tr
-            %td
-            %td= link_to t.name, team_path(t)
-            %td
-            %td
-        - else
-          - t.participations.each do |p|
-            %tr
-              %td= link_to p.ladder.name, ladder_path(p.ladder)
-              %td= link_to p.team.name, team_path(p.team)
-              %td= p.rank
-              %td= p.elo_score
-       
+            %td= link_to p.ladder.name, ladder_path(p.ladder)
+            %td= link_to p.team.name, team_path(p.team)
+            %td= p.rank
+            %td= p.elo_score
+     
 = link_to "Einem Team beitreten", new_user_teammembership_path(current_user)
 |
 = link_to "Ein neues Team gründen", new_team_path

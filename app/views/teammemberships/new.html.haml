@@ -1,7 +1,11 @@
-%h2 Neue Teammitgliedschaft für #{@user.name}
+%h2 Einem Team beitreten
+
+
+Wähle hier das Team aus, dem Du beitreten möchtest. Du bist dann automatisch Mitglied in diesem Team. 
 
 = semantic_form_for [@user, @teammembership] do |f|
   = f.inputs do
-    = f.input :team
-  = f.buttons
+    = f.input :team, :as => :select, :collection => Team.multiplayer.without_user(current_user)
+  = f.buttons do
+    = f.commit_button "Dem Team beitreten"
 
