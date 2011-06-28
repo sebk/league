@@ -6,13 +6,15 @@ class TeamsController < ApplicationController
 
   def create_participation
     @team = Team.find(params[:id])
-    @participation = @team.participations.build(params[:participation])
-    if @participation.save
-      flash[:success] = "Das Team ist jetzt in der Liga."
-    else
-      flash[:error] = "Das Tesm konnte nicht in die Liga eingetragen werden."
+    if current_user.teams.include?(@team)
+      @participation = @team.participations.build(params[:participation])
+      if @participation.save
+        flash[:success] = "Das Team ist jetzt in der Liga."
+      else
+        flash[:error] = "Das Tesm konnte nicht in die Liga eingetragen werden."
+      end
+      redirect_to team_path(@team)
     end
-    redirect_to team_path(@team)
   end
   
   def index
