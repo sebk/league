@@ -28,10 +28,12 @@ class TeamsController < ApplicationController
 
   def update
     @team = Team.find(params[:id])
-    if @team.update_attributes(params[:team])
-      redirect_to team_path(@team)
-    else
-      render :edit
+    if @team.users.include?(current_user)
+      if @team.update_attributes(params[:team])
+        redirect_to team_path(@team)
+      else
+        render :edit
+      end
     end
   end
 
@@ -58,8 +60,10 @@ class TeamsController < ApplicationController
 
   def destroy
     @team = Team.find(params[:id])
-    @team.destroy
-    redirect_to teams_path
+    if @team.users.include?(current_user)
+      @team.destroy
+      redirect_to teams_path
+    end
   end
 
   def users
