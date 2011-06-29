@@ -5,7 +5,6 @@ class Game < ActiveRecord::Base
 
   validates_presence_of :team1, :team2, :score1, :score2, :ladder
   
-
   after_save :calculate_elo_score, :calculate_rank
 
   def calculate_elo_score

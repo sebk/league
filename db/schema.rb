@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110628130259) do
+ActiveRecord::Schema.define(:version => 20110629163718) do
 
   create_table "games", :force => true do |t|
     t.integer  "team1_id"
@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(:version => 20110628130259) do
     t.integer  "score2"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "team1_name"
+    t.string   "team2_name"
+    t.boolean  "confirmed",  :default => false
   end
 
   create_table "ladders", :force => true do |t|
