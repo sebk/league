@@ -15,9 +15,7 @@ u2 = User.create!(:name => "Sebastian", :email => "sek@gobas.de", :password => "
 
 
 
-
-
-l1 = Ladder.create(:name => "1on1 Kicker Liga Gobas intern")
+l1 = Ladder.create(:name => "1on1 Kicker Liga Gobas intern", :singleplayer => true)
 l2 = Ladder.create(:name => "2on2 Kicker Liga Gobas intern")
 
 
