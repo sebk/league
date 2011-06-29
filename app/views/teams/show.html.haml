@@ -21,11 +21,12 @@
 
 
 - if current_user.teams.include?(@team)
-  Liga beitreten:
+  %h3 Liga beitreten:
   = semantic_form_for @team.participations.build, :url => {:action => "create_participation"} do |f|
-    = f.inputs do
-      = f.input :ladder
-    = f.buttons
+    = f.inputs  do
+      = f.input :ladder, :label => "Ligen"
+    = f.buttons do
+      = f.commit_button "Beitreten"
 
 
 

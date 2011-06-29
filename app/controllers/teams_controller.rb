@@ -35,7 +35,7 @@ class TeamsController < ApplicationController
         render :edit
       end
     else
-      render :file => File.join(RAILS_ROOT, 'public/403.html'), :status => :forbidden, :layout => false   #works
+      render_forbidden
     end
   end
 
