@@ -24,6 +24,9 @@ class TeamsController < ApplicationController
 
   def edit
     @team = Team.find(params[:id])
+    if !@team.users.include?(current_user)
+      render_forbidden
+    end
   end
 
   def update
