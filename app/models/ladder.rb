@@ -5,6 +5,10 @@ class Ladder < ActiveRecord::Base
 
   validates_presence_of :name
 
+  scope :without_team, lambda{ |team| 
+    where( ['id NOT IN (?)', team.ladder_ids]) if team.ladder_ids.any?
+  }
+
   def calculate_ranks
     self.participations.each.with_index do |p,i|
       p.update_attribute(:rank, i+1)

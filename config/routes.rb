@@ -1,5 +1,9 @@
 GobasLadder::Application.routes.draw do
 
+  get "participations/create"
+
+  get "participations/destroy"
+
   devise_for :users
 
   get 'me' => 'home#me', :as => "show_me"
@@ -20,9 +24,9 @@ GobasLadder::Application.routes.draw do
   
   resources :teams do
     member do
-      post 'create_participation'
       get 'users'
     end
+    resources :participations, :only => [:create, :destroy]
   end
 
   resources :ladders do

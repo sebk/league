@@ -4,18 +4,7 @@ class TeamsController < ApplicationController
   
   respond_to :html, :json
 
-  def create_participation
-    @team = Team.find(params[:id])
-    if current_user.teams.include?(@team)
-      @participation = @team.participations.build(params[:participation])
-      if @participation.save
-        flash[:success] = "Das Team ist jetzt in der Liga."
-      else
-        flash[:error] = "Das Tesm konnte nicht in die Liga eingetragen werden."
-      end
-      redirect_to team_path(@team)
-    end
-  end
+
   
   def index
     @teams = current_user.teams
@@ -60,6 +49,7 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
+    @available_ladders = Ladder.without_team(@team)
     respond_with(@team)
   end
 

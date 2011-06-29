@@ -15,18 +15,27 @@
 %table
   %tr
     %th Liga
+    %th Rang
+    %th Punkte
   - @team.participations.each do |p|
     %tr
-      %td= p.ladder.name
+      %td
+        = link_to p.ladder.name, ladder_path(p.ladder)
+        = link_to image_tag('icon_trash.gif'), team_participation_path(@team,p), :method => :delete, :confirm => "Soll die Teilnahme an der Liga wirklich beendet werden?"
+      %td= p.rank
+      %td= p.elo_score
 
 
 - if current_user.teams.include?(@team)
-  %h3 Liga beitreten:
-  = semantic_form_for @team.participations.build, :url => {:action => "create_participation"} do |f|
-    = f.inputs  do
-      = f.input :ladder, :label => "Ligen"
-    = f.buttons do
-      = f.commit_button "Beitreten"
+  - if @available_ladders.empty?
+    Du bist bereits in allen Ligen
+  - else
+    %h3 Liga beitreten:
+    = semantic_form_for [@team, @team.participations.build] do |f|
+      = f.inputs  do
+        = f.input :ladder, :label => "Ligen", :as => :select, :collection => @available_ladders, :prompt => "Bitte wählen"
+      = f.buttons do
+        = f.commit_button "Beitreten"
 
 
 
