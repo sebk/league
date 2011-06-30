@@ -1,6 +1,6 @@
 %h2 Detailansicht des Teams #{@team.name}
 
-- if @team.users.include?(current_user)
+- if @team.users.include?(current_user) && current_user.teammemberships.where(:team_id => @team.id).first.admin == true
   = link_to "Editieren", edit_team_path(@team) 
   |
   = link_to "Löschen", team_path(@team),:confirm => "Wirklich löschen?" , :method => "delete"
