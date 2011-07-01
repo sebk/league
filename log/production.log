@@ -1,0 +1,151 @@
+
+
+Started GET "/ladders/12" for 127.0.0.1 at Fri Jul 01 12:53:03 +0200 2011
+  Processing by LaddersController#show as HTML
+  Parameters: {"id"=>"12"}
+Completed   in 8ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at Fri Jul 01 12:53:03 +0200 2011
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (1.0ms)
+Rendered devise/sessions/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at Fri Jul 01 12:53:07 +0200 2011
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"zrsHz7IyHbVY0HXmK521vLIGntov09imOY4MkZM8v9o=", "utf8"=>"✓", "user"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "email"=>"sek@gobas.de"}}
+Redirected to http://localhost:3000/ladders/12
+Completed 302 Found in 103ms
+
+
+Started GET "/ladders/12" for 127.0.0.1 at Fri Jul 01 12:53:07 +0200 2011
+  Processing by LaddersController#show as HTML
+  Parameters: {"id"=>"12"}
+Completed   in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Ladder with ID=12):
+  app/controllers/ladders_controller.rb:55:in `show'
+
+Rendered /Users/seb/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/seb/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (64.2ms)
+Rendered /Users/seb/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (68.0ms)
+
+
+Started GET "/teams/22" for 127.0.0.1 at Fri Jul 01 13:02:11 +0200 2011
+  Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"22"}
+Completed   in 8ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at Fri Jul 01 13:02:11 +0200 2011
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (1.0ms)
+Rendered devise/sessions/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at Fri Jul 01 13:02:15 +0200 2011
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"zrsHz7IyHbVY0HXmK521vLIGntov09imOY4MkZM8v9o=", "utf8"=>"✓", "user"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "email"=>"sek@gobas.de"}}
+Redirected to http://localhost:3000/teams/22
+Completed 302 Found in 84ms
+
+
+Started GET "/teams/22" for 127.0.0.1 at Fri Jul 01 13:02:15 +0200 2011
+  Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"22"}
+Completed   in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Team with ID=22):
+  app/controllers/teams_controller.rb:51:in `show'
+
+Rendered /Users/seb/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+Rendered /Users/seb/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (64.4ms)
+Rendered /Users/seb/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (68.1ms)
+
+
+Started GET "/ladders/11" for 127.0.0.1 at Fri Jul 01 13:24:07 +0200 2011
+  Processing by LaddersController#show as HTML
+  Parameters: {"id"=>"11"}
+Completed   in 8ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at Fri Jul 01 13:24:07 +0200 2011
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (1.5ms)
+Rendered devise/sessions/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at Fri Jul 01 13:24:09 +0200 2011
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"zrsHz7IyHbVY0HXmK521vLIGntov09imOY4MkZM8v9o=", "utf8"=>"✓", "user"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "email"=>"sek@gobas.de"}}
+Redirected to http://localhost:3000/ladders/11
+Completed 302 Found in 99ms
+
+
+Started GET "/ladders/11" for 127.0.0.1 at Fri Jul 01 13:24:09 +0200 2011
+  Processing by LaddersController#show as HTML
+  Parameters: {"id"=>"11"}
+Completed   in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Ladder with ID=11):
+  app/controllers/ladders_controller.rb:55:in `show'
+
+Rendered /Users/seb/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/seb/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (66.6ms)
+Rendered /Users/seb/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (70.4ms)
+
+
+Started GET "/ladders/11" for 127.0.0.1 at Fri Jul 01 13:24:14 +0200 2011
+  Processing by LaddersController#show as HTML
+  Parameters: {"id"=>"11"}
+Completed   in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at Fri Jul 01 13:24:14 +0200 2011
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (0.5ms)
+Rendered devise/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ladders/11" for 127.0.0.1 at Fri Jul 01 13:24:17 +0200 2011
+  Processing by LaddersController#show as HTML
+  Parameters: {"id"=>"11"}
+Completed   in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at Fri Jul 01 13:24:17 +0200 2011
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (1.0ms)
+Rendered devise/sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ladders/11" for 127.0.0.1 at Fri Jul 01 13:24:18 +0200 2011
+  Processing by LaddersController#show as HTML
+  Parameters: {"id"=>"11"}
+Completed   in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at Fri Jul 01 13:24:18 +0200 2011
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (0.6ms)
+Rendered devise/sessions/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ladders/11" for 127.0.0.1 at Fri Jul 01 13:24:19 +0200 2011
+  Processing by LaddersController#show as HTML
+  Parameters: {"id"=>"11"}
+Completed   in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at Fri Jul 01 13:24:19 +0200 2011
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (0.5ms)
+Rendered devise/sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
