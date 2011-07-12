@@ -49,8 +49,7 @@ class TeamsController < ApplicationController
   def show
     @team = Team.find(params[:id])
     @available_ladders = Ladder.without_team(@team)
-    puts @team.id
-    @teammembership = current_user.teammemberships.find(@team.id)
+    @teammembership = current_user.teammemberships.where(:team_id => @team.id).first
     respond_with(@team)
   end
 

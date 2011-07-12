@@ -22,6 +22,6 @@ end
 def destroy
   @teammembership = Teammembership.find(params[:id])
   @teammembership.destroy
-  redirect_to team_path
+  redirect_to teams_path
 end
 end
