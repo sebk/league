@@ -14,4 +14,5 @@ class Ladder < ActiveRecord::Base
       p.update_attribute(:rank, i+1)
     end
   end
+
 end

@@ -4,7 +4,6 @@ class TeamsController < ApplicationController
   
   respond_to :html, :json
 
-
   
   def index
     @teams = current_user.teams

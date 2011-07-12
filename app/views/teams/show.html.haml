@@ -4,8 +4,8 @@
   = link_to "Editieren", edit_team_path(@team) 
   |
   = link_to "Löschen", team_path(@team),:confirm => "Wirklich löschen?" , :method => "delete"
-|
-= link_to "Mitgliedschaft beenden"
+  |
+-# = link_to "Mitgliedschaft beenden", user_teammembership_path(current_user, ), :method => "delete", :confirm => "Mitgliedschaft beenden?"
 
 %h3 Teammitglieder
 %table

@@ -19,7 +19,7 @@ GobasLadder::Application.routes.draw do
 
 
   resources :users do
-    resources :teammemberships
+    resources :teammemberships, :only => [:create, :new, :destroy]
   end
   
   resources :teams do

@@ -19,4 +19,9 @@ def create
   end
 end
 
+def destroy
+  @teammembership = Teammembership.find(params[:id])
+  @teammembership.destroy
+  redirect_to team_path
+end
 end
