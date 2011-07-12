@@ -1,11 +1,13 @@
 %h2 Detailansicht des Teams #{@team.name}
 
-- if @team.users.include?(current_user) && current_user.teammemberships.where(:team_id => @team.id).first.admin == true
-  = link_to "Editieren", edit_team_path(@team) 
-  |
-  = link_to "Löschen", team_path(@team),:confirm => "Wirklich löschen?" , :method => "delete"
-  |
--# = link_to "Mitgliedschaft beenden", user_teammembership_path(current_user, ), :method => "delete", :confirm => "Mitgliedschaft beenden?"
+- if @team.users.include?(current_user)  
+  - if current_user.teammemberships.where(:team_id => @team.id).first.admin == true
+    = link_to "Editieren", edit_team_path(@team) 
+    |
+    = link_to "Löschen", team_path(@team),:confirm => "Wirklich löschen?" , :method => "delete"
+    |
+  - else
+    = link_to "Mitgliedschaft beenden", user_teammembership_path(current_user, @teammembership), :method => "delete", :confirm => "Mitgliedschaft beenden?"
 
 %h3 Teammitglieder
 %table
