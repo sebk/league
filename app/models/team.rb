@@ -1,5 +1,5 @@
 class Team < ActiveRecord::Base
-  has_many :participations
+  has_many :participations, :dependent => :destroy
   has_many :teammemberships
   has_many :users, :through => :teammemberships
   has_many :ladders, :through => :participations
