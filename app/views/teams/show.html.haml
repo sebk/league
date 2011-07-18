@@ -5,8 +5,8 @@
     = link_to "Editieren", edit_team_path(@team) 
     |
     = link_to "Löschen", team_path(@team),:confirm => "Wirklich löschen?" , :method => "delete"
-    |
   - else
+    |
     = link_to "Mitgliedschaft beenden", user_teammembership_path(current_user, @teammembership), :method => "delete", :confirm => "Mitgliedschaft beenden?"
 
 %h3 Teammitglieder
@@ -25,7 +25,8 @@
     %tr
       %td
         = link_to p.ladder.name, ladder_path(p.ladder)
-        = link_to image_tag('icon_trash.gif'), team_participation_path(@team,p), :method => :delete, :confirm => "Soll die Teilnahme an der Liga wirklich beendet werden?"
+        - if current_user.teams.include?(@team)
+          = link_to image_tag('icon_trash.gif'), team_participation_path(@team,p), :method => :delete, :confirm => "Soll die Teilnahme an der Liga wirklich beendet werden?"
       %td= p.rank
       %td= p.elo_score
 
