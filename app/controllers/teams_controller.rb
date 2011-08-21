@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
 
   before_filter :authenticate_user!
   
-  respond_to :html, :json
+  respond_to :html, :json, :xml
 
   
   def index
@@ -49,8 +49,8 @@ class TeamsController < ApplicationController
   def show
     @team = Team.find(params[:id])
     @available_ladders = Ladder.without_team(@team)
-    @teammembership = current_user.teammemberships.where(:team_id => @team.id).first
-    respond_with(@team)
+    
+    respond_with @team
   end
 
   def destroy

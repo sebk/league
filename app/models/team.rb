@@ -24,4 +24,15 @@ class Team < ActiveRecord::Base
   scope :multiplayer, where(:singleplayer => false)
 
 
+  def as_json(options={})
+    super(:include => [
+          :users, 
+          :ladders
+    ], :only => [:name, :singleplayer, :id, :admin, :email])
+  end
+
+  def as_xml(option={})
+    super(:include => [:users, :ladders])
+  end
+
 end
