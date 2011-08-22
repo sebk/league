@@ -25,10 +25,8 @@ class Team < ActiveRecord::Base
 
 
   def as_json(options={})
-    super(:include => [
-          :users, 
-          :ladders
-    ], :only => [:name, :singleplayer, :id, :admin, :email])
+    super(:include => [:users, :ladders], 
+          :only => [:name, :singleplayer, :id, :admin, :email])
   end
 
   def as_xml(option={})
