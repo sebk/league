@@ -29,8 +29,12 @@ class Team < ActiveRecord::Base
           :only => [:name, :singleplayer, :id, :admin, :email])
   end
 
-  def as_xml(option={})
-    super(:include => [:users, :ladders])
+
+  alias_method :ar_to_xml, :to_xml
+  def to_xml(options = {})
+    options[:include] = [:users, :ladders]
+    options[:only] = [:name, :singleplayer, :id, :admin, :email]
+    ar_to_xml(options)
   end
 
 end
